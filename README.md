@@ -1,10 +1,10 @@
-# 🏆 AthleteIQ — Smart Sports Performance & Analytics Database
+#  AthleteIQ — Smart Sports Performance & Analytics Database
 
 > A professional-grade SQL system that tracks athletes, performance stats, training loads, injuries, and generates intelligent risk flags — simulating the backend of a real sports analytics platform.
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 **AthleteIQ** is an advanced SQL database project built for sports analytics. It goes beyond basic score tracking to model the data infrastructure that real teams and franchises use to manage athlete health, performance trends, and training optimization.
 
@@ -16,7 +16,7 @@ This project demonstrates:
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 AthleteIQ/
@@ -47,7 +47,7 @@ AthleteIQ/
 
 ---
 
-## 🧠 Key SQL Concepts Used
+##  Key SQL Concepts Used
 
 | Concept | Where Used |
 |---|---|
@@ -63,7 +63,7 @@ AthleteIQ/
 
 ---
 
-## 🚀 Setup Instructions
+##  Setup Instructions
 
 ### Prerequisites
 - MySQL 8.0+ (recommended) or MariaDB 10.5+
@@ -106,7 +106,7 @@ AthleteIQ/
 
 ---
 
-## 📊 Sample Outputs
+##  Sample Outputs
 
 ### Top Performers Query
 Returns athlete rankings with rolling averages and month-by-month rating trends using `RANK()` and `LAG()`.
@@ -126,7 +126,7 @@ Shows all unresolved injury/overtraining risk flags sorted by severity, auto-gen
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - [ ] Python integration for data visualization (matplotlib / seaborn)
 - [ ] REST API layer using FastAPI or Flask
@@ -134,16 +134,3 @@ Shows all unresolved injury/overtraining risk flags sorted by severity, auto-gen
 - [ ] Machine learning model for injury prediction
 - [ ] Support for multiple sports (Basketball, Cricket, Tennis)
 
----
-
-## 👤 Author
-
-**Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [your-linkedin](https://linkedin.com/in/your-profile)
-
----
-
-## 📄 License
-
-This project is open source under the [MIT License](LICENSE).
