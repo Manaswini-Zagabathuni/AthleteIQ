@@ -1,4 +1,4 @@
-#  AthleteIQ — Smart Sports Performance & Analytics Database
+#  AthleteIQ - Smart Sports Performance & Analytics Database
 
 > A professional-grade SQL system that tracks athletes, performance stats, training loads, injuries, and generates intelligent risk flags — simulating the backend of a real sports analytics platform.
 
