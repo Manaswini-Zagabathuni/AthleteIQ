@@ -3,7 +3,7 @@
 --  Description: Analyze how injuries affect performance ratings
 --               using CTEs, JOINs, and Window Functions
 -- ============================================================
-
+ 
 USE AthleteIQ;
 
 -- ------------------------------------------------------------
