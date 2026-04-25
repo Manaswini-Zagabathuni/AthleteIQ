@@ -6,7 +6,7 @@
 
 USE AthleteIQ;
 
-DELIMITER $$
+DELIMITER $$ 
 
 -- ------------------------------------------------------------
 -- Procedure: calculate_athlete_iq_score
