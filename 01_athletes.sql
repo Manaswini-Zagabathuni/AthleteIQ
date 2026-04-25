@@ -39,7 +39,7 @@ CREATE TABLE athletes (
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_athlete_team FOREIGN KEY (team_id) REFERENCES teams(team_id) ON DELETE SET NULL
 );
-
+ 
 -- ------------------------------------------------------------
 -- Indexes
 -- ------------------------------------------------------------
