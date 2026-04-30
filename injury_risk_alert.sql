@@ -4,7 +4,7 @@
 --               are detected in training or recovery data
 -- ============================================================
 
-USE AthleteIQ; 
+USE AthleteIQ;  
 
 DELIMITER $$
 
