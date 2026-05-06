@@ -1,13 +1,9 @@
--- ============================================================
 --  AthleteIQ | Schema: Performance Tracking
 --  Description: Match stats and performance records per athlete
--- ============================================================
 
 USE AthleteIQ;
 
--- ------------------------------------------------------------
 -- Matches Table
--- ------------------------------------------------------------
 CREATE TABLE matches (
     match_id        INT AUTO_INCREMENT PRIMARY KEY,
     match_date      DATE         NOT NULL,
@@ -22,9 +18,7 @@ CREATE TABLE matches (
     CONSTRAINT fk_away_team FOREIGN KEY (away_team_id) REFERENCES teams(team_id)
 );
 
--- ------------------------------------------------------------
 -- Performance Records Table
--- ------------------------------------------------------------
 CREATE TABLE performance_records (
     record_id           INT AUTO_INCREMENT PRIMARY KEY,
     athlete_id          INT          NOT NULL,
@@ -44,9 +38,7 @@ CREATE TABLE performance_records (
     CONSTRAINT uq_athlete_match UNIQUE (athlete_id, match_id)
 );
 
--- ------------------------------------------------------------
 -- Indexes
--- ------------------------------------------------------------
 CREATE INDEX idx_perf_athlete   ON performance_records(athlete_id);
 CREATE INDEX idx_perf_match     ON performance_records(match_id);
 CREATE INDEX idx_perf_rating    ON performance_records(rating);
