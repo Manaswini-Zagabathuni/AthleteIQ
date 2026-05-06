@@ -16,9 +16,7 @@ CREATE TABLE teams (
     created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- ------------------------------------------------------------
 -- Athletes Table
--- ------------------------------------------------------------
 CREATE TABLE athletes (
     athlete_id      INT AUTO_INCREMENT PRIMARY KEY,
     first_name      VARCHAR(50)  NOT NULL,
@@ -37,9 +35,7 @@ CREATE TABLE athletes (
     CONSTRAINT fk_athlete_team FOREIGN KEY (team_id) REFERENCES teams(team_id) ON DELETE SET NULL
 );
  
--- ------------------------------------------------------------
 -- Indexes
--- ------------------------------------------------------------
 CREATE INDEX idx_athlete_team   ON athletes(team_id);
 CREATE INDEX idx_athlete_status ON athletes(status);
 CREATE INDEX idx_athlete_name   ON athletes(last_name, first_name);
