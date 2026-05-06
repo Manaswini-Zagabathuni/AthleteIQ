@@ -1,14 +1,10 @@
--- ============================================================
 --  AthleteIQ | Query: Injury Impact Analysis
 --  Description: Analyze how injuries affect performance ratings
 --               using CTEs, JOINs, and Window Functions
--- ============================================================
  
 USE AthleteIQ;
 
--- ------------------------------------------------------------
 -- 1. Injury Summary Per Athlete
--- ------------------------------------------------------------
 SELECT
     CONCAT(a.first_name, ' ', a.last_name)  AS athlete_name,
     a.status,
@@ -27,9 +23,8 @@ GROUP BY a.athlete_id, athlete_name, a.status
 ORDER BY total_matches_missed DESC;
 
 
--- ------------------------------------------------------------
 -- 2. Performance Before vs After Injury
--- ------------------------------------------------------------
+
 WITH injury_dates AS (
     SELECT
         athlete_id,
@@ -74,9 +69,7 @@ LEFT JOIN post_injury_perf post ON a.athlete_id = post.athlete_id
 ORDER BY rating_impact;
 
 
--- ------------------------------------------------------------
 -- 3. Injury Recurrence Risk Report
--- ------------------------------------------------------------
 SELECT
     CONCAT(a.first_name, ' ', a.last_name)  AS athlete_name,
     i.body_part,
@@ -95,10 +88,7 @@ GROUP BY a.athlete_id, athlete_name, i.body_part
 HAVING COUNT(*) >= 1
 ORDER BY injury_count DESC, total_missed DESC;
 
-
--- ------------------------------------------------------------
 -- 4. Average Recovery Time By Injury Type
--- ------------------------------------------------------------
 SELECT
     injury_type,
     severity,
