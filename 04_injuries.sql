@@ -36,9 +36,7 @@ CREATE TABLE injury_risk_flags (
     CONSTRAINT fk_flag_athlete FOREIGN KEY (athlete_id) REFERENCES athletes(athlete_id) ON DELETE CASCADE
 );
 
--- ------------------------------------------------------------
 -- Indexes
--- ------------------------------------------------------------
 CREATE INDEX idx_injury_athlete   ON injuries(athlete_id);
 CREATE INDEX idx_injury_date      ON injuries(injury_date);
 CREATE INDEX idx_injury_severity  ON injuries(severity);
