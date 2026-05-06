@@ -1,17 +1,13 @@
--- ============================================================
 --  AthleteIQ | Triggers: Injury Risk Auto-Flagging
 --  Description: Automatically flags athletes when risk factors
 --               are detected in training or recovery data
--- ============================================================
 
 USE AthleteIQ;  
 
 DELIMITER $$
 
--- ------------------------------------------------------------
 -- Trigger 1: Flag high injury risk after new injury is logged
 -- Fires when: INSERT on injuries
--- ------------------------------------------------------------
 CREATE TRIGGER trg_flag_injury_risk_on_insert
 AFTER INSERT ON injuries
 FOR EACH ROW
@@ -60,10 +56,8 @@ BEGIN
 END$$
 
 
--- ------------------------------------------------------------
 -- Trigger 2: Flag risk when recovery readiness drops critically
 -- Fires when: INSERT on recovery_metrics
--- ------------------------------------------------------------
 CREATE TRIGGER trg_flag_low_readiness
 AFTER INSERT ON recovery_metrics
 FOR EACH ROW
@@ -92,10 +86,8 @@ BEGIN
 END$$
 
 
--- ------------------------------------------------------------
 -- Trigger 3: Flag overtraining risk from high-intensity sessions
 -- Fires when: INSERT on training_sessions
--- ------------------------------------------------------------
 CREATE TRIGGER trg_flag_overtraining
 AFTER INSERT ON training_sessions
 FOR EACH ROW
@@ -132,9 +124,7 @@ END$$
 DELIMITER ;
 
 
--- ------------------------------------------------------------
 -- View: Active Risk Flags Dashboard
--- ------------------------------------------------------------
 CREATE OR REPLACE VIEW vw_active_risk_flags AS
 SELECT
     irf.flag_id,
