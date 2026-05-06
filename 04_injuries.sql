@@ -1,13 +1,11 @@
--- ============================================================
 --  AthleteIQ | Schema: Injury Log
 --  Description: Injury tracking, recovery timeline & impact
--- ============================================================
 
 USE AthleteIQ;
 
--- ------------------------------------------------------------
+
 -- Injuries Table
--- ------------------------------------------------------------
+
 CREATE TABLE injuries (
     injury_id           INT AUTO_INCREMENT PRIMARY KEY,
     athlete_id          INT          NOT NULL,
@@ -26,9 +24,7 @@ CREATE TABLE injuries (
     CONSTRAINT fk_injury_athlete FOREIGN KEY (athlete_id) REFERENCES athletes(athlete_id) ON DELETE CASCADE
 );
 
--- ------------------------------------------------------------
 -- Injury Risk Flags Table (auto-populated via trigger)
--- ------------------------------------------------------------
 CREATE TABLE injury_risk_flags (
     flag_id             INT AUTO_INCREMENT PRIMARY KEY,
     athlete_id          INT          NOT NULL,
