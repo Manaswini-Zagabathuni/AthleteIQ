@@ -1,14 +1,11 @@
--- ============================================================
 --  AthleteIQ | Schema: Athletes & Teams
 --  Description: Core tables for athlete and team management
--- ============================================================
 
 CREATE DATABASE IF NOT EXISTS AthleteIQ;
 USE AthleteIQ;
 
--- ------------------------------------------------------------
 -- Teams Table
--- ------------------------------------------------------------
+
 CREATE TABLE teams (
     team_id       INT AUTO_INCREMENT PRIMARY KEY,
     team_name     VARCHAR(100) NOT NULL,
