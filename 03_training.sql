@@ -1,13 +1,9 @@
--- ============================================================
 --  AthleteIQ | Schema: Training Load Manager
 --  Description: Tracks workout sessions, intensity & recovery
--- ============================================================
 
 USE AthleteIQ;
 
--- ------------------------------------------------------------
 -- Training Sessions Table
--- ------------------------------------------------------------
 CREATE TABLE training_sessions (
     session_id          INT AUTO_INCREMENT PRIMARY KEY,
     athlete_id          INT          NOT NULL,
@@ -24,9 +20,7 @@ CREATE TABLE training_sessions (
     CONSTRAINT fk_training_athlete FOREIGN KEY (athlete_id) REFERENCES athletes(athlete_id) ON DELETE CASCADE
 );
 
--- ------------------------------------------------------------
 -- Recovery Metrics Table
--- ------------------------------------------------------------
 CREATE TABLE recovery_metrics (
     recovery_id         INT AUTO_INCREMENT PRIMARY KEY,
     athlete_id          INT          NOT NULL,
@@ -43,9 +37,7 @@ CREATE TABLE recovery_metrics (
     CONSTRAINT uq_recovery_daily   UNIQUE (athlete_id, log_date)
 );
 
--- ------------------------------------------------------------
 -- Indexes
--- ------------------------------------------------------------
 CREATE INDEX idx_training_athlete ON training_sessions(athlete_id);
 CREATE INDEX idx_training_date    ON training_sessions(session_date);
 CREATE INDEX idx_recovery_athlete ON recovery_metrics(athlete_id);
