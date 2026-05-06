@@ -1,14 +1,10 @@
--- ============================================================
 --  AthleteIQ | Query: Top Performers
 --  Description: Rank athletes by avg rating, goals & assists
 --               using Window Functions and CTEs
--- ============================================================
 
 USE AthleteIQ;
 
--- ------------------------------------------------------------
 -- 1. Overall Top Performers (Avg Rating + Stats)
--- ------------------------------------------------------------
 WITH athlete_stats AS (
     SELECT
         a.athlete_id,
@@ -42,10 +38,7 @@ SELECT
 FROM athlete_stats
 ORDER BY overall_rank;
 
-
--- ------------------------------------------------------------
 -- 2. Top Performers Per Position
--- ------------------------------------------------------------
 WITH position_stats AS (
     SELECT
         a.position,
@@ -71,11 +64,7 @@ SELECT
     RANK() OVER (PARTITION BY position ORDER BY avg_rating DESC) AS position_rank
 FROM position_stats
 ORDER BY position, position_rank;
-
-
--- ------------------------------------------------------------
 -- 3. Month-by-Month Rating Trend Per Athlete (LAG Function)
--- ------------------------------------------------------------
 WITH monthly_ratings AS (
     SELECT
         a.athlete_id,
