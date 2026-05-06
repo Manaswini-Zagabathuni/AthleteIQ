@@ -1,13 +1,9 @@
--- ============================================================
 --  AthleteIQ | Seed Data
 --  Description: Sample data to populate and test the database
--- ============================================================
 
 USE AthleteIQ;
 
--- ------------------------------------------------------------
 -- Teams
--- ------------------------------------------------------------
 INSERT INTO teams (team_name, sport, city, coach_name, founded_year) VALUES
 ('Thunder FC',       'Football',   'New York',    'Carlos Mendez',  1998),
 ('Storm Athletics',  'Football',   'Los Angeles', 'David Park',     2003),
@@ -15,9 +11,7 @@ INSERT INTO teams (team_name, sport, city, coach_name, founded_year) VALUES
 ('Falcon United',    'Football',   'Houston',     'James O\'Brien', 2010),
 ('Apex Runners',     'Athletics',  'Seattle',     'Linda Torres',   2005);
 
--- ------------------------------------------------------------
 -- Athletes
--- ------------------------------------------------------------
 INSERT INTO athletes (first_name, last_name, date_of_birth, gender, nationality, position, team_id, height_cm, weight_kg, contract_start, contract_end, status) VALUES
 ('Liam',    'Carter',   '1995-03-14', 'Male',   'USA',     'Forward',    1, 181.5, 77.0, '2022-01-01', '2025-12-31', 'Active'),
 ('Sofia',   'Navarro',  '1998-07-22', 'Female', 'Spain',   'Midfielder', 2, 165.0, 60.5, '2021-06-01', '2024-05-31', 'Active'),
@@ -28,9 +22,7 @@ INSERT INTO athletes (first_name, last_name, date_of_birth, gender, nationality,
 ('Emily',   'Johnson',  '1999-12-01', 'Female', 'UK',      'Defender',   3, 168.0, 62.0, '2023-03-01', '2026-02-28', 'Active'),
 ('Noah',    'Müller',   '1997-04-25', 'Male',   'Germany', 'Forward',    4, 183.0, 79.5, '2021-01-01', '2025-12-31', 'Active');
 
--- ------------------------------------------------------------
 -- Matches
--- ------------------------------------------------------------
 INSERT INTO matches (match_date, home_team_id, away_team_id, home_score, away_score, venue, match_type) VALUES
 ('2024-01-15', 1, 2, 2, 1, 'MetLife Stadium',       'League'),
 ('2024-01-22', 3, 4, 0, 0, 'Soldier Field',          'League'),
@@ -41,9 +33,7 @@ INSERT INTO matches (match_date, home_team_id, away_team_id, home_score, away_sc
 ('2024-04-08', 3, 1, 2, 2, 'Soldier Field',           'Cup'),
 ('2024-04-20', 1, 3, 4, 1, 'MetLife Stadium',        'League');
 
--- ------------------------------------------------------------
 -- Performance Records
--- ------------------------------------------------------------
 INSERT INTO performance_records (athlete_id, match_id, minutes_played, goals, assists, shots_on_target, pass_accuracy, distance_covered_km, sprint_count, rating, notes) VALUES
 (1, 1, 90, 2, 0, 5, 88.5, 10.2, 22, 9.1, 'Outstanding game, clinical finishing'),
 (1, 4, 85, 0, 1, 2, 82.0, 9.8,  18, 7.2, 'Good work rate, unlucky in front of goal'),
@@ -56,9 +46,7 @@ INSERT INTO performance_records (athlete_id, match_id, minutes_played, goals, as
 (8, 4, 90, 1, 0, 4, 84.0, 10.3, 21, 8.0, 'Consistent performer'),
 (8, 5, 90, 2, 1, 6, 87.5, 11.2, 27, 9.3, 'Hat-trick attempt, two goals and an assist');
 
--- ------------------------------------------------------------
 -- Training Sessions
--- ------------------------------------------------------------
 INSERT INTO training_sessions (athlete_id, session_date, session_type, duration_minutes, intensity_level, calories_burned, heart_rate_avg, heart_rate_max, rpe, coach_feedback) VALUES
 (1, '2024-01-10', 'Strength',  60,  8, 520, 145, 178, 8, 'Great lifting session, pushed through fatigue'),
 (1, '2024-01-12', 'Cardio',    45,  7, 480, 155, 182, 7, 'Good pace work, maintain endurance'),
@@ -70,10 +58,7 @@ INSERT INTO training_sessions (athlete_id, session_date, session_type, duration_
 (5, '2024-01-15', 'Cardio',    40,  6, 400, 150, 175, 6, 'Steady state run, good recovery rate'),
 (6, '2024-01-10', 'Tactical',  80,  5, 320, 118, 145, 4, 'Focus on pressing triggers and shape'),
 (8, '2024-01-12', 'Strength',  65,  9, 560, 152, 180, 9, 'Personal best on squat — excellent form');
-
--- ------------------------------------------------------------
 -- Recovery Metrics
--- ------------------------------------------------------------
 INSERT INTO recovery_metrics (athlete_id, log_date, sleep_hours, sleep_quality, muscle_soreness, hydration_level, mood_score, readiness_score, notes) VALUES
 (1, '2024-01-11', 7.5, 8, 4, 8, 8, 8, 'Felt good, legs slightly tired'),
 (1, '2024-01-13', 6.0, 5, 7, 6, 6, 5, 'Poor sleep, body fatigued'),
@@ -83,10 +68,7 @@ INSERT INTO recovery_metrics (athlete_id, log_date, sleep_hours, sleep_quality, 
 (3, '2024-01-09', 9.0, 7, 8, 7, 5, 4, 'Injured — pain in hamstring still present'),
 (5, '2024-01-12', 7.5, 8, 3, 8, 8, 8, 'Energetic, motivated for training'),
 (8, '2024-01-13', 6.5, 6, 6, 7, 7, 6, 'Slightly fatigued after heavy lift');
-
--- ------------------------------------------------------------
 -- Injuries
--- ------------------------------------------------------------
 INSERT INTO injuries (athlete_id, injury_date, injury_type, body_part, severity, expected_return, actual_return, matches_missed, treatment, treated_by, is_recurring, notes) VALUES
 (3, '2023-11-20', 'Hamstring Strain',  'Right Leg',     'Moderate', '2024-01-15', NULL,         4,  'Physiotherapy + rest',         'Dr. Alan Webb',    FALSE, 'Grade 2 tear, progressing well'),
 (1, '2023-08-05', 'Ankle Sprain',      'Left Ankle',    'Minor',    '2023-08-20', '2023-08-18', 1,  'Ice, compression, elevation',  'Dr. Sarah Kim',    TRUE,  'Third ankle issue this year'),
