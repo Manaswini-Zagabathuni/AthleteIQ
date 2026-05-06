@@ -1,14 +1,10 @@
--- ============================================================
 --  AthleteIQ | Query: Peak Performance Window Analysis
 --  Description: Identify when athletes are in their best form
 --               using Window Functions (LEAD, LAG, ROWS BETWEEN)
--- ============================================================
 
 USE AthleteIQ;
 
--- ------------------------------------------------------------
 -- 1. Rolling 3-Match Average Rating (Form Window)
--- ------------------------------------------------------------
 WITH match_ratings AS (
     SELECT
         pr.athlete_id,
@@ -43,9 +39,7 @@ FROM match_ratings
 ORDER BY athlete_name, match_date;
 
 
--- ------------------------------------------------------------
 -- 2. Peak Form Periods (Consecutive High-Rating Matches)
--- ------------------------------------------------------------
 WITH ranked_matches AS (
     SELECT
         pr.athlete_id,
@@ -73,9 +67,7 @@ HAVING COUNT(*) >= 1
 ORDER BY consecutive_peak_matches DESC, avg_rating_in_peak DESC;
 
 
--- ------------------------------------------------------------
 -- 3. Training Load vs Match Performance Correlation
--- ------------------------------------------------------------
 WITH training_load AS (
     SELECT
         athlete_id,
@@ -117,9 +109,7 @@ GROUP BY a.athlete_id, athlete_name, wp.match_date, wp.rating, wp.goals, wp.dist
 ORDER BY athlete_name, wp.match_date;
 
 
--- ------------------------------------------------------------
 -- 4. Readiness Score vs Match Day Performance
--- ------------------------------------------------------------
 SELECT
     CONCAT(a.first_name, ' ', a.last_name) AS athlete_name,
     m.match_date,
