@@ -1,17 +1,13 @@
--- ============================================================
 --  AthleteIQ | Stored Procedure: Calculate Player Rating
 --  Description: Auto-calculates a composite AthleteIQ score
 --               based on performance, training & recovery data
--- ============================================================
 
 USE AthleteIQ;
 
 DELIMITER $$ 
 
--- ------------------------------------------------------------
 -- Procedure: calculate_athlete_iq_score
 -- Returns a composite score (0–100) for a given athlete
--- ------------------------------------------------------------
 CREATE PROCEDURE calculate_athlete_iq_score(
     IN  p_athlete_id   INT,
     OUT p_iq_score     DECIMAL(5,2),
@@ -97,10 +93,9 @@ BEGIN
 END$$
 
 
--- ------------------------------------------------------------
 -- Procedure: get_all_athlete_iq_scores
 -- Loops through all athletes and prints their IQ scores
--- ------------------------------------------------------------
+
 CREATE PROCEDURE get_all_athlete_iq_scores()
 BEGIN
     DECLARE done      INT DEFAULT FALSE;
@@ -142,9 +137,7 @@ END$$
 DELIMITER ;
 
 
--- ------------------------------------------------------------
 -- Usage Examples:
--- ------------------------------------------------------------
 
 -- Get IQ score for a single athlete (athlete_id = 1)
 -- CALL calculate_athlete_iq_score(1, @score, @grade, @summary);
