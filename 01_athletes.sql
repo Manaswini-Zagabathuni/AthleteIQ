@@ -3,7 +3,7 @@
 
 CREATE DATABASE IF NOT EXISTS AthleteIQ;
 USE AthleteIQ;
-
+ 
 -- Teams Table
 
 CREATE TABLE teams (
