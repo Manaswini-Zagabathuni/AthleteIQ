@@ -13,7 +13,6 @@ CREATE TABLE teams (
     founded_year  YEAR,
     created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 -- Athletes Table
 CREATE TABLE athletes (
     athlete_id      INT AUTO_INCREMENT PRIMARY KEY,
